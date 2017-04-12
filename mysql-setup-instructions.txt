@@ -1,0 +1,32 @@
+Next class is going to involve some setup headaches. If using MySQL Workbench, you can set up early:
+
+Open up MySQL Workbench and click the (+) symbol next to the text which reads “MySQL Connections”
+
+Enter “Local Instance MySQL” as your connection name
+
+Make sure your connection is set to “Standard (TCP/IP)”
+
+Enter “localhost” as the Hostname
+
+Enter “3306” as the port for your connection. You can leave this part out of the connection and it could still work.
+
+Enter your MySQL username into the Username section (Default is “root”)
+
+Click on the Store In Vault... button beside the Password option and enter in your MySQL password (Default is empty)
+
+Mac users will see Store in Keychain.
+Leave the Default Schema field empty
+
+New Connection
+
+Click on the “Test Connection” button so as to ensure that you have properly connected to your new localhost connection. If successful, hit okay and your new connection should appear on the main page.
+
+It is imperative that the server be started for Workbench to be able to connect to the database.
+Now double-click on that connection, enter your password if necessary, and the SQL editor will appear.
+
+
+
+Mac users: mysqladmin -u root password ‘yourpassword’
+
+useful tutorials
+https://www.youtube.com/watch?v=X_umYKqKaF0

@@ -1,15 +1,17 @@
-CREATE DATABASE favorite_db;
+USE mytest_db;
 
--- Make it so all of the following code will affect favorite_db --
+CREATE TABLE people (
+ id INTEGER(11) AUTO_INCREMENT NOT NULL,
+ name VARCHAR(30) NOT NULL,
+ has_pet BOOLEAN NOT NULL,
+ pet_name VARCHAR(30),
+ pet_age INTEGER(10),
+ PRIMARY KEY (id)
+);
 
--- Creates the table "favorite_foods" within favorite_db --
-
-  -- Make a string column called "food" which cannot contain null --
-  -- Make an numeric column called "score" --
 CREATE TABLE favorite_foods (
-  id 
   food TEXT(30) NOT NULL,
-  score DECIMAL
+  score INTEGER(3)
 );
   -- Make a string column called "song" which cannot contain null --
   -- Make a string column called "artist" --
@@ -27,6 +29,17 @@ CREATE TABLE favorite_songs (
   -- Set the primary key of the table to id --
 CREATE TABLE favorite_movies (
   movie TEXT(60),
-  five_times BOOLEAN default FALSE,
+  five_times BOOLEAN DEFAULT FALSE,
   score INTEGER(3)
 );
+
+INSERT INTO people (name, has_pet, pet_name, pet_age)
+VALUES ('John', FALSE,null,null),
+('Mary', TRUE, 'Ruphus', 3),
+("Tony", TRUE, 'Max', 2);
+
+SELECT * FROM people;
+
+UPDATE people
+SET has_pet = TRUE, pet_name = "Franklin", pet_age = 2
+WHERE name = 'John';
